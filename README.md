@@ -1,27 +1,3 @@
-Permission_Library
-A simple Android library that simplifies the process of requesting runtime permissions. This library utilizes the ActivityResultRegistry for modern permission handling, ensuring a smooth integration into your Android applications.
-
-Getting Started
-Prerequisites
-Ensure your project is set up with the minimum Android SDK version required by the library (e.g., API level 23 or higher).
-
-Installation
-Add JitPack repository to your project:Add the following code in your root build.gradle at the end of repositories:
-gradle
-Copy code
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
-    }
-}
-Add the library dependency:Include the following in your app-level build.gradle file:
-gradle
-Copy code
-dependencies {
-	        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
-	}
-
 # Permission_Library
 
 A simple Android library that simplifies the process of requesting runtime permissions. This library utilizes the `ActivityResultRegistry` for modern permission handling, ensuring a smooth integration into your Android applications.
@@ -48,8 +24,8 @@ Add the library dependency:Include the following in your app-level build.gradle 
 gradle
 Copy code
 dependencies {
-	        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
-	}
+    implementation 'com.github.shacharml:Permission_Library:1.00.02'
+}
 Usage
 Basic Setup
 Add required permissions in your AndroidManifest.xml:Specify each permission your app requires:
