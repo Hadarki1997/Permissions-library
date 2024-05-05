@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements PermissionGrantCa
         permissionManager = new permissionManager(getActivityResultRegistry());
 
         String[] permissions = {Manifest.permission.CAMERA};
-        permissionManager.askForPermissions(this, this, permissions, "We need permission to use the camera", "We need permission to take pictures");
+        permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, "We need permission to use Bluetooth", "It's necessary for our app to connect with other Bluetooth devices.");
     }
 
     @Override
