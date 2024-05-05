@@ -1,6 +1,16 @@
+To visually enhance the readability and presentation of your README for the Permission Library, consider the following format adjustments:
+
+1. **Use Syntax Highlighting**: Clearly distinguish code snippets with proper syntax highlighting.
+2. **Organized Sections**: Ensure each section is well-organized with clear headers.
+3. **Step-by-step Instructions**: Provide detailed, step-by-step instructions that are easy to follow.
+
+Here's a revised version of your README:
+
+---
+
 # Permission_Library
 
-A simple Android library that simplifies the process of requesting runtime permissions. This library utilizes the ActivityResultRegistry for modern permission handling, ensuring a smooth integration into your Android applications.
+A simple Android library that simplifies the process of requesting runtime permissions. This library utilizes the `ActivityResultRegistry` for modern permission handling, ensuring a smooth integration into your Android applications.
 
 ## Getting Started
 
@@ -10,66 +20,72 @@ Ensure your project is set up with the minimum Android SDK version required by t
 
 ### Installation
 
-1. *Add JitPack repository to your project:*
+**1. Add JitPack repository to your project:**
 
-   Insert the following code in your root build.gradle at the end of the repositories block:
-   gradle
+   Insert the following code in your root `build.gradle` at the end of the repositories block:
+
+   ```gradle
    allprojects {
        repositories {
            ...
            maven { url 'https://jitpack.io' }
        }
    }
-   
+   ```
 
-2. *Add the library dependency:*
+**2. Add the library dependency:**
 
-   Add this line to your app-level build.gradle file:
-   gradle
+   Add this line to your app-level `build.gradle` file:
+
+   ```gradle
    dependencies {
        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
    }
-   
+   ```
 
 ## Usage
 
 ### Basic Setup
 
-1. *Add required permissions in your AndroidManifest.xml:*
+**1. Add required permissions in your AndroidManifest.xml:**
 
    Specify each permission your app requires:
-   xml
+
+   ```xml
    <uses-permission android:name="android.permission.XXX" />
-   
+   ```
 
-   Replace XXX with the name of the permission you need to request.
+   Replace `XXX` with the name of the permission you need to request.
 
-2. *Create an instance of permissionManager:*
+**2. Create an instance of `permissionManager`:**
 
-   java
+   ```java
    permissionManager permissionManager = new permissionManager(getActivityResultRegistry());
-   
+   ```
 
-3. *Request permissions:*
+**3. Request permissions:**
 
-   Utilize the askForPermissions() method to request permissions:
-   java
+   Utilize the `askForPermissions()` method to request permissions:
+
+   ```java
    permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.CAMERA}, "We need permission to use the camera", "It's necessary for our app to work properly.");
-   
+   ```
 
-   Implement the PermissionGrantCallback interface to handle the permission result:
-   java
-   **@Override
+   Implement the `PermissionGrantCallback` interface to handle the permission result:
+
+   ```java
+   @Override
    public void onPermissionGrant() {
        Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
-   }**
-   
+   }
+   ```
 
 ### Example (Java)
 
-Here's a complete example demonstrating how to request camera permission in MainActivity:
-java
-**public class MainActivity extends AppCompatActivity implements PermissionGrantCallback {
+Here's a complete example demonstrating how to request camera permission in `MainActivity`:
+
+```java
+public class MainActivity extends AppCompatActivity implements PermissionGrantCallback {
 
     private permissionManager permissionManager;
 
@@ -88,4 +104,9 @@ java
     public void onPermissionGrant() {
         Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
     }
-}**
+}
+```
+
+---
+
+This formatting includes clear section breaks, syntax highlighting for code, and organized instructions which should make the README more visually appealing and easier to follow.
