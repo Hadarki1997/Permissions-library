@@ -21,15 +21,7 @@ Copy code
 dependencies {
 	        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
 	}
-Usage
-Basic Setup
-**Add required permissions in
-Write it in github format , cause i want to copy it
-ChatGPT
-Certainly! Here's the README formatted for GitHub:
 
-markdown
-Copy code
 # Permission_Library
 
 A simple Android library that simplifies the process of requesting runtime permissions. This library utilizes the `ActivityResultRegistry` for modern permission handling, ensuring a smooth integration into your Android applications.
