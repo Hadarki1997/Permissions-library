@@ -59,7 +59,7 @@ Ensure your project is set up with the minimum Android SDK version required by t
    Utilize the `askForPermissions()` method to request permissions:
 
    ```java
-   permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.CAMERA}, "We need permission to use the camera", "It's necessary for our app to work properly.");
+        permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, "We need permission to use Bluetooth", "It's necessary for our app to connect with other Bluetooth devices.");
    ```
 
    Implement the `PermissionGrantCallback` interface to handle the permission result:
@@ -73,7 +73,7 @@ Ensure your project is set up with the minimum Android SDK version required by t
 
 ### Example (Java)
 
-Here's a complete example demonstrating how to request camera permission in `MainActivity`:
+Here's a complete example demonstrating how to request Bluetooth permission in `MainActivity`:
 
 ```java
 public class MainActivity extends AppCompatActivity implements PermissionGrantCallback {
@@ -86,8 +86,6 @@ public class MainActivity extends AppCompatActivity implements PermissionGrantCa
         setContentView(R.layout.activity_main);
 
         permissionManager = new permissionManager(getActivityResultRegistry());
-
-        String[] permissions = {Manifest.permission.CAMERA};
         permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, "We need permission to use Bluetooth", "It's necessary for our app to connect with other Bluetooth devices.");
     }
 
