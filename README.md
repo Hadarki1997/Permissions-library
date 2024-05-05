@@ -26,21 +26,34 @@ Add the library dependency:Include the following in your app-level build.gradle 
 dependencies {
 	        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
 	}
-Usage
+Usage  
+
 Basic Setup
+
 Add required permissions in your AndroidManifest.xml:Specify each permission your app requires:
+
 <uses-permission android:name="android.permission.XXX" />
+
 Replace XXX with the name of the permission you need to request.
+
 Create an instance of permissionManager:
+
 permissionManager permissionManager = new permissionManager(getActivityResultRegistry());
+
 Request permissions:Utilize the askForPermissions() method to request permissions:
+
 permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.CAMERA}, "We need permission to use the camera", "It's necessary for our app to work properly.");
+
 Implement the PermissionGrantCallback interface to handle the permission result:
+
 @Override
+
 public void onPermissionGrant() {
+
     Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
 }
 Example (Java)
+
 Here's a complete example demonstrating how to request camera permission in an MainActivity:
 public class MainActivity extends AppCompatActivity implements PermissionGrantCallback {
 
