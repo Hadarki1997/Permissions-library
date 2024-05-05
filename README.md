@@ -25,7 +25,7 @@ Ensure your project is set up with the minimum Android SDK version required by t
 2. *Add the library dependency:*
 
    Add this line to your app-level build.gradle file:
-   gradle
+   
    dependencies {
        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
    }
