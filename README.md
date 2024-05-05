@@ -1,12 +1,3 @@
-To visually enhance the readability and presentation of your README for the Permission Library, consider the following format adjustments:
-
-1. **Use Syntax Highlighting**: Clearly distinguish code snippets with proper syntax highlighting.
-2. **Organized Sections**: Ensure each section is well-organized with clear headers.
-3. **Step-by-step Instructions**: Provide detailed, step-by-step instructions that are easy to follow.
-
-Here's a revised version of your README:
-
----
 
 # Permission_Library
 
