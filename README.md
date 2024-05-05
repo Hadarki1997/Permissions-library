@@ -1,6 +1,6 @@
 # Permission_Library
 
-A simple Android library that simplifies the process of requesting runtime permissions. This library utilizes the `ActivityResultRegistry` for modern permission handling, ensuring a smooth integration into your Android applications.
+A simple Android library that simplifies the process of requesting runtime permissions. This library utilizes the ActivityResultRegistry for modern permission handling, ensuring a smooth integration into your Android applications.
 
 ## Getting Started
 
@@ -10,51 +10,65 @@ Ensure your project is set up with the minimum Android SDK version required by t
 
 ### Installation
 
-1. **Add JitPack repository to your project:**
+1. *Add JitPack repository to your project:*
 
-   Add the following code in your root `build.gradle` at the end of repositories:
-   ```gradle
+   Insert the following code in your root build.gradle at the end of the repositories block:
+   gradle
    allprojects {
        repositories {
            ...
            maven { url 'https://jitpack.io' }
        }
    }
+   
 
-Add the library dependency:Include the following in your app-level build.gradle file:
+2. *Add the library dependency:*
 
-dependencies {
-	        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
-	}
-Usage  
+   Add this line to your app-level build.gradle file:
+   gradle
+   dependencies {
+       implementation 'com.github.Hadarki1997:Permissions-library:Tag'
+   }
+   
 
-Basic Setup
+## Usage
 
-Add required permissions in your AndroidManifest.xml:Specify each permission your app requires:
+### Basic Setup
 
-<uses-permission android:name="android.permission.XXX" />
+1. *Add required permissions in your AndroidManifest.xml:*
 
-Replace XXX with the name of the permission you need to request.
+   Specify each permission your app requires:
+   xml
+   <uses-permission android:name="android.permission.XXX" />
+   
 
-Create an instance of permissionManager:
+   Replace XXX with the name of the permission you need to request.
 
-permissionManager permissionManager = new permissionManager(getActivityResultRegistry());
+2. *Create an instance of permissionManager:*
 
-Request permissions:Utilize the askForPermissions() method to request permissions:
+   java
+   permissionManager permissionManager = new permissionManager(getActivityResultRegistry());
+   
 
-permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.CAMERA}, "We need permission to use the camera", "It's necessary for our app to work properly.");
+3. *Request permissions:*
 
-Implement the PermissionGrantCallback interface to handle the permission result:
+   Utilize the askForPermissions() method to request permissions:
+   java
+   permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.CAMERA}, "We need permission to use the camera", "It's necessary for our app to work properly.");
+   
 
-@Override
+   Implement the PermissionGrantCallback interface to handle the permission result:
+   java
+   @Override
+   public void onPermissionGrant() {
+       Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
+   }
+   
 
-public void onPermissionGrant() {
+### Example (Java)
 
-    Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
-}
-Example (Java)
-
-Here's a complete example demonstrating how to request camera permission in an MainActivity:
+Here's a complete example demonstrating how to request camera permission in MainActivity:
+java
 public class MainActivity extends AppCompatActivity implements PermissionGrantCallback {
 
     private permissionManager permissionManager;
@@ -75,21 +89,3 @@ public class MainActivity extends AppCompatActivity implements PermissionGrantCa
         Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
