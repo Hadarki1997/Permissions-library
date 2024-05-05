@@ -98,4 +98,4 @@ public class MainActivity extends AppCompatActivity implements PermissionGrantCa
 
 ---
 
-This formatting includes clear section breaks, syntax highlighting for code, and organized instructions which should make the README more visually appealing and easier to follow.
+
