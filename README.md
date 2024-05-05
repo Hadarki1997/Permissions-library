@@ -20,39 +20,28 @@ Ensure your project is set up with the minimum Android SDK version required by t
            maven { url 'https://jitpack.io' }
        }
    }
+
 Add the library dependency:Include the following in your app-level build.gradle file:
-gradle
-Copy code
+
 dependencies {
-    implementation 'com.github.shacharml:Permission_Library:1.00.02'
-}
+	        implementation 'com.github.Hadarki1997:Permissions-library:Tag'
+	}
 Usage
 Basic Setup
 Add required permissions in your AndroidManifest.xml:Specify each permission your app requires:
-xml
-Copy code
 <uses-permission android:name="android.permission.XXX" />
 Replace XXX with the name of the permission you need to request.
 Create an instance of permissionManager:
-java
-Copy code
 permissionManager permissionManager = new permissionManager(getActivityResultRegistry());
 Request permissions:Utilize the askForPermissions() method to request permissions:
-java
-Copy code
 permissionManager.askForPermissions(this, this, new String[]{Manifest.permission.CAMERA}, "We need permission to use the camera", "It's necessary for our app to work properly.");
 Implement the PermissionGrantCallback interface to handle the permission result:
-java
-Copy code
 @Override
 public void onPermissionGrant() {
     Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
 }
 Example (Java)
 Here's a complete example demonstrating how to request camera permission in an MainActivity:
-
-java
-Copy code
 public class MainActivity extends AppCompatActivity implements PermissionGrantCallback {
 
     private permissionManager permissionManager;
@@ -73,9 +62,21 @@ public class MainActivity extends AppCompatActivity implements PermissionGrantCa
         Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
     }
 }
-In this example, the permission library is used to request permission to use the camera. When the permission is granted, a toast message will be displayed.
 
-sql
-Copy code
 
-Feel free to copy this template into your GitHub project's README file!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
